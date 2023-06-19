@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  eee-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: eee-api-server
+    ports:
+      - "8080:80"
