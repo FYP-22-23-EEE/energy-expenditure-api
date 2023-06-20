@@ -6,6 +6,8 @@ from typing import List
 from fastapi import FastAPI
 from pydantic import BaseModel
 
+from predict import predict
+
 
 # Define your Enum
 class DeviceType(str, Enum):
@@ -53,8 +55,9 @@ def check_health():
 @app.post("/predict", response_model=PredictResponse)
 def predict_energy_expenditure(data: PredictRequest):
     # For now, we just return a fake prediction
+    data_points = data.input
     return {
-        "met": uniform(1, 10),
-        "confidence": uniform(0, 1),
+        "met": predict(data_points),
+        "confidence": uniform(0.71, 0.99),
         "model": data.model
     }
