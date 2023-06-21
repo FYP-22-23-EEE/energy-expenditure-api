@@ -5,10 +5,13 @@ name = "pypi"
 
 [packages]
 fastapi = "*"
-uvicorn = {extras = ["standard"], version = "*"}
+uvicorn = { extras = ["standard"], version = "*" }
 pydantic = "*"
 numpy = "*"
 pandas = "*"
+sklearn = "*"
+xgboost = "*"
+scikit-learn = "*"
 
 [dev-packages]
 

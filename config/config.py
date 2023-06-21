@@ -1,9 +1,6 @@
-import random
 from dataclasses import dataclass
 from datetime import datetime
 from enum import Enum
-
-import numpy as np
 
 
 class Activity(Enum):
@@ -95,35 +92,3 @@ distributions_z = {
     Activity.RUNNING: Distribution(mean=5.0, std=0.3, min=28.1, max=31.0),
     Activity.CYCLING: Distribution(mean=9.0, std=0.5, min=31.1, max=36.0)
 }
-
-
-def predict(datapoints: list[DataPoint]) -> float:
-    """
-    Predicts the activity based on the datapoints.
-
-    :param datapoints: list of datapoints
-    :return: predicted activity
-    """
-    average_x = np.mean([dp.x for dp in datapoints])
-    average_y = np.mean([dp.y for dp in datapoints])
-    average_z = np.mean([dp.z for dp in datapoints])
-
-    # check activity
-    activity = None
-    for k in distributions_x.keys():
-        print(distributions_x[k].min, average_x, distributions_x[k].max)
-        if distributions_x[k].min <= average_x <= distributions_x[k].max:
-            activity = k
-            break
-
-    print(f'activity: {activity}', f'average_x: {average_x}')
-    if activity == Activity.SITTING:
-        return random.uniform(0.75, 1.2)
-    elif activity == Activity.STANDING:
-        return random.uniform(0.80, 1.3)
-    elif activity == Activity.RUNNING:
-        return random.uniform(3.0, 3.7)
-    elif activity == Activity.CYCLING:
-        return random.uniform(6.0, 7.0)
-    else:
-        return random.uniform(0, 0.5)
