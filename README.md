@@ -1,6 +1,8 @@
 # Energy Expenditure API
 
-The Energy Expenditure API is a FastAPI-based application that provides endpoints for checking the health of the API and predicting energy expenditure based on a specified model. The prediction endpoint accepts input data points and uses a specified model to estimate energy expenditure, returning a fake prediction for now.
+The Energy Expenditure API is a FastAPI-based application that provides endpoints for checking the health of the API and
+predicting energy expenditure based on a specified model. The prediction endpoint accepts input data points and uses a
+specified model to estimate energy expenditure, returning a fake prediction for now.
 
 ## API Endpoints
 
@@ -9,7 +11,8 @@ The Energy Expenditure API is a FastAPI-based application that provides endpoint
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+These instructions will get you a copy of the project up and running on your local machine for development and testing
+purposes.
 
 ### Prerequisites
 
@@ -25,6 +28,7 @@ git clone https://github.com/yourusername/energy-expenditure-api.git
 ```
 
 2. Navigate to the project directory:
+
 ```bash
 cd energy-expenditure-api
 ```
