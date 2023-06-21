@@ -6,7 +6,7 @@ from typing import List
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-from predict import predict
+from process.predict import predict
 
 
 # Define your Enum
@@ -57,7 +57,7 @@ def predict_energy_expenditure(data: PredictRequest):
     # For now, we just return a fake prediction
     data_points = data.input
     return {
-        "met": predict(data_points),
+        "met": predict(data_points, data.model),
         "confidence": uniform(0.71, 0.99),
         "model": data.model
     }
